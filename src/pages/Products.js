@@ -15,15 +15,22 @@ export const Products = () => {
           <img src={data.img} alt="" />
         </>
       ))}
-      <div>
-        <div>
-          <input type="text" placeholder=" Search property" />
+      <div className="flex" style={{ margin: "15px" }}>
+        <div
+          className="flex flex-row p-2"
+          style={{ backgroundColor: "#f4f4f4" }}
+        >
+          <input
+            type="text"
+            placeholder=" Search property"
+            style={{ width: "800px", margin: 5 }}
+          />
           <button>Find Now</button>
         </div>
         <button>Filter</button>
       </div>
       <div>
-        <div>
+        {/* <div className="flex justify-between">
           <div>
             <h1>Total Product</h1>
             <span>184</span>
@@ -31,42 +38,13 @@ export const Products = () => {
           <div>
             <span>Sort By</span>
           </div>
-        </div>
+        </div> */}
         <div className="productCard">
           {productCard.map((item) => (
             <ProductCard item={item} key={item._id} />
           ))}
         </div>
       </div>
-      {/* <nav className="pagination flex flex-d">
-        <ul className="pagination">
-          <li className="page-item">
-            <a className="page-link" href="#">
-              Previous
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              1
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              2
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              3
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              Next
-            </a>
-          </li>
-        </ul>
-      </nav> */}
     </div>
   );
 };

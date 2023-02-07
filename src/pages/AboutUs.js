@@ -1,6 +1,6 @@
 import { PeopleCard } from "../data/aboutUsData";
 import { AboutUsPage } from "../data/pagesData";
-import "../App.css"
+import "../App.css";
 
 export const AboutUs = () => {
   return (

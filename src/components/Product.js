@@ -5,7 +5,7 @@ export const Product = () => {
   return (
     <>
       <span>Product</span>
-      <h2>Out popular product</h2>
+      <h2>Our popular product</h2>
       <span>
         Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim
         placerat nisi, adipiscing mauris non purus parturient.

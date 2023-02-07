@@ -26,15 +26,15 @@ export const Landing = () => {
         </div>
       ))}
       <Benefits />
-      <Product />
+      {/* <Product /> */}
       <OutProduct />
       <Testimonial />
-      <Article />
-      <div className="join we me">
+      {/* <Article /> */}
+      {/* <div className="join we me">
         <h1>Join with me to get special discount</h1>
         <div>learn me</div>
         <Button name="go" />
-      </div>
+      </div> */}
     </div>
   );
 };
