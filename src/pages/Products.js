@@ -2,8 +2,17 @@ import { productCard } from "../data/productCard";
 import "../App.css";
 import { ProductsPage } from "../data/pagesData";
 import ProductCard from "../components/ProductCard";
+import { useContext, useEffect } from "react";
+
+import axios from "axios";
+import { Outlet } from "react-router-dom";
+import { url } from "../components/constant";
+import { DataContext } from "../context/context";
 
 export const Products = () => {
+  const { filterData } = useContext(DataContext);
+
+  console.log(filterData);
   return (
     <div className="flex flex-d align-items justify-content">
       {ProductsPage.map((data) => (
@@ -23,11 +32,11 @@ export const Products = () => {
           <input
             type="text"
             placeholder=" Search property"
-            style={{ width: "800px", margin: 5 }}
+            style={{ width: "800px", border: 0 }}
           />
-          <button>Find Now</button>
+          <button style={{ marginRight: "5px" }}>Find Now</button>
+          <button>Filter</button>
         </div>
-        <button>Filter</button>
       </div>
       <div>
         {/* <div className="flex justify-between">
@@ -40,11 +49,12 @@ export const Products = () => {
           </div>
         </div> */}
         <div className="productCard">
-          {productCard.map((item) => (
-            <ProductCard item={item} key={item._id} />
+          {filterData?.map((item) => (
+            <ProductCard item={item} key={item.id} />
           ))}
         </div>
       </div>
+      <Outlet />
     </div>
   );
 };

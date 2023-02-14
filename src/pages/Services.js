@@ -1,7 +1,7 @@
-import "../App.css"
+import "../App.css";
 import { nanoid } from "nanoid";
 import { ServicesPage } from "../data/pagesData";
-
+import { Outlet } from "react-router-dom";
 
 const Servic = [
   {
@@ -54,12 +54,16 @@ export const Services = () => {
           <img src={data.img} alt="" />
         </>
       ))}
-      <div>
+      <div className="margin-top">
         {Servic.map((e) => (
           <>
-            <h1>{e.number}</h1>
-            <h4>{e.title}</h4>
-            <span>{e.text}</span>
+            <div className="service flex flex-row justify-content align-items">
+              <h1>{e.number}</h1>
+              <div>
+                <h4>{e.title}</h4>
+                <span>{e.text}</span>
+              </div>
+            </div>
           </>
         ))}
       </div>

@@ -34,3 +34,18 @@
   line-height: 130%;
   font-weight: 700;
 }
+
+.flex {
+  display: flex;
+  padding: 0 10px;
+}
+.align-items {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+.flex-row {
+  flex-direction: row;
+}

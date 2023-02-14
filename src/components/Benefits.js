@@ -24,7 +24,7 @@ const BenefitsCard = [
 
 export const Benefits = () => {
   return (
-    <div className="flex flex-d align-items justify-content">
+    <div className="flex flex-d align-items justify-content margin-top">
       <div className="flex align-items justify-content">
         <div>
           <span className="textCategory">benefits</span>

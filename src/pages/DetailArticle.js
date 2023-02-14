@@ -1,6 +1,3 @@
-
 export const DetailArticle = () => {
-    return (
-        <h1>Hello DetailArticle </h1>
-    )
-}
+  return <h1>Hello DetailArticle </h1>;
+};

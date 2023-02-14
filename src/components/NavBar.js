@@ -2,6 +2,9 @@ import { nanoid } from "nanoid";
 import "../style/Navbar.css";
 import { Link } from "react-router-dom";
 import { menuItems } from "../data/menuData";
+import { Login } from "../pages";
+import { useState } from "react";
+// import useCurrentUser from "../custom-hooks/useCurrentUser";
 
 const menuIcons = [
   {
@@ -17,7 +20,9 @@ const menuIcons = [
 ];
 
 export const NavBar = ({ current, setCurrent }) => {
-  console.log(current);
+  const [modal, setModal] = useState(false);
+  // const { user } = useCurrentUser();
+
   return (
     // <header className="flex align-items space-between">
 
@@ -54,11 +59,71 @@ export const NavBar = ({ current, setCurrent }) => {
       </div>
       <div className="flex align-items space-between">
         {menuIcons.map((e, index) => (
-          <Link className="iconMenu" to={e.link} key={index}>
-            <img src={e.img} alt="img" />
-          </Link>
+          <>
+            {index == 1 ? (
+              <Link
+                className="iconMenu"
+                onClick={() => setModal(!modal)}
+                key={index}
+              >
+                <img src={e.img} alt="img" />
+              </Link>
+            ) : (
+              <div>
+                {/* <p>
+                  <a
+                    class="btn btn-primary"
+                    data-bs-toggle="collapse"
+                    href="#collapseExample"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    Link with href
+                  </a>
+                </p> */}
+
+                <a
+                  className="iconMenu"
+                  // to={e.link}
+                  key={index}
+                  class="btn btn-light"
+                  data-bs-toggle="collapse"
+                  href="#collapseExample"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  <img src={e.img} alt="img" /> <span></span>
+                </a>
+                <div
+                  class="collapse position-absolute"
+                  id="collapseExample"
+                  style={{ width: "300px" }}
+                >
+                  <div class="card card-body">
+                    <div className="table-responsive">
+                      <table className="table sm">
+                        <thead>
+                          <th> Нэр</th>
+                          <th>Тоо </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Гутал</td>
+                            <td>1</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
         ))}
       </div>
+      <Login setModal={setModal} modal={modal} />
     </nav>
   );
 };

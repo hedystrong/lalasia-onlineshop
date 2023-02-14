@@ -1,10 +1,11 @@
 import { PeopleCard } from "../data/aboutUsData";
 import { AboutUsPage } from "../data/pagesData";
 import "../App.css";
+import { Outlet } from "react-router-dom";
 
 export const AboutUs = () => {
   return (
-    <div className="flex flex-d align-items justify-content">
+    <div className="Container flex flex-d align-items justify-content">
       {AboutUsPage.map((data) => (
         <>
           <div className="containerTitle flex flex-d align-items justify-content">
@@ -15,7 +16,7 @@ export const AboutUs = () => {
         </>
       ))}
 
-      <div>
+      {/* <div>
         <div>
           <span className="textCategory">Out Mission</span>
           <h2>Out team dedicated to help dinf smart home product</h2>
@@ -46,12 +47,12 @@ export const AboutUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div>
+      <div className="margin-top">
         <div>
           <div>
-            <span className="textCategory">Our Team</span>
+            <h1 className="textCategory">Our Team</h1>
             <h2>Meet our leading and strong team</h2>
           </div>
           <div>
@@ -61,12 +62,17 @@ export const AboutUs = () => {
             </span>
           </div>
         </div>
-        <div>
+        <div className="about-grid">
           {PeopleCard.map((card) => (
             <>
-              <img src={card.img} alt="" />
-              <span>{card.name}</span>
-              <span>{card.position}</span>
+              <div className="about-item ">
+                <img width={"100%"} src={card.img} alt="" />
+                <div className="about-name-section">
+                  <span className="about-title">{card.name}</span>
+                  <br />
+                  <span className="article-text">{card.position}</span>
+                </div>
+              </div>
             </>
           ))}
         </div>

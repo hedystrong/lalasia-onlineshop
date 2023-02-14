@@ -88,3 +88,92 @@ body {
 .landingPage {
   position: relative;
 }
+
+.loginPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.m-1 {
+  margin: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(221 221 221 / 90%);
+}
+
+.service {
+  border: 1px solid #518581;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px;
+  gap: 20px;
+}
+
+.articleBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  height: 250px;
+}
+.articleItem {
+  padding: 20px;
+  margin: 10px;
+}
+
+.article-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 180%;
+  color: #afadb5;
+}
+
+.article-sub {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.article-sub-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 130%;
+  margin-left: 5px;
+}
+
+.about-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-item {
+  width: 30%;
+}
+
+.about-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 130%;
+  margin-left: 5px;
+}
+
+.about-name-section {
+  margin: 20px 0;
+}
+
+.margin-top {
+  margin: 40px 0;
+}

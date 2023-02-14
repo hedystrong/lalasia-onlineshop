@@ -3,6 +3,11 @@ import { nanoid } from "nanoid";
 export const menuItems = [
   {
     _id: nanoid(),
+    name: "Home",
+    link: "/",
+  },
+  {
+    _id: nanoid(),
     name: "Product",
     link: "product",
   },

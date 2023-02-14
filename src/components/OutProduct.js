@@ -3,12 +3,12 @@ import "../App.css";
 export const OutProduct = () => {
   return (
     <>
-      <div className="flex align-items space-between">
+      <div className="flex align-items space-between margin-top">
         <div>
           <div className="outProduct flex flex-d ">
-            <span>out product</span>
+            <span>Our product</span>
             <h2>crafted by</h2>
-            <span>al;sdkfj</span>
+            {/* <span>al;sdkfj</span> */}
             <button className="boxGreen">Learn More</button>
           </div>
           <img src={require("../assets/page/landing/outProduct.jpg")} alt="" />

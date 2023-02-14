@@ -1,7 +1,11 @@
 import "../style/Product.css";
 import { productCard } from "../data/productCard";
+import { useContext } from "react";
+import { DataContext } from "../context/context";
 
 export const Product = () => {
+  const { filterData } = useContext(DataContext);
+
   return (
     <>
       <span>Product</span>
@@ -11,16 +15,16 @@ export const Product = () => {
         placerat nisi, adipiscing mauris non purus parturient.
       </span>
       <div className="products flex ">
-        {productCard.map((e, index) => (
+        {filterData?.map((e, index) => (
           <div className="productCard" key={index}>
             <img
-              src={e.img}
+              src={e.thumbImage}
               alt=""
               style={{ height: "360px", width: "394px" }}
             />
-            <span>{e.category}</span>
-            <h2>{e.title}</h2>
-            <span>{e.text}</span>
+            <span>{e.categoryId}</span>
+            <h2>{e.productName}</h2>
+            <span>{e.desc}</span>
             <span>{e.price}</span>
           </div>
         ))}
