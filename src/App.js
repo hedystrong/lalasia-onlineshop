@@ -16,6 +16,7 @@ function App() {
     <DataContext.Provider value={{ data, setData, filterData, setFilterData }}>
       <CategoryContext.Provider value={{ categoryData, setCategory }}>
         <NavBar current={current} setCurrent={setCurrent} />
+        Hello
         <div className="Container flex flex-d aling-items justify-content">
           <Routes>
             <Route index path="/" element={<Landing />} />
