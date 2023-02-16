@@ -12,40 +12,10 @@ import {
 import { LandingPage } from "../data/pagesData";
 import { Button } from "../components/Button";
 import axios from "axios";
-import { useContext, useEffect } from "react";
-import { CategoryContext, DataContext } from "../context/context";
+
 
 export const Landing = () => {
-  const { setData, setFilterData } = useContext(DataContext);
-  const { setCategory } = useContext(CategoryContext);
 
-  useEffect(() => {
-    getData();
-    getCategory();
-  }, []);
-
-  const getData = () => {
-    axios
-      .get("http://localhost:9000/api/product")
-      .then((res) => {
-        if (res.data.status) {
-          setData(res.data.result);
-          setFilterData(res.data.result);
-        }
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const getCategory = () => {
-    axios
-      .get("http://localhost:9000/api/category")
-      .then((res) => {
-        if (res.data.status) {
-          setCategory(res.data.result);
-        }
-      })
-      .catch((err) => console.log(err));
-  };
 
   return (
     <div className="flex flex-d align-items justify-content">
